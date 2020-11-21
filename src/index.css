@@ -1,13 +1,90 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Font */
+/* font-family: 'Libre Franklin', sans-serif; */
+
+/* Color Palette */
+/* Key Lime: #E2EB98 */
+/* Aero: #8FB8DE */
+/* Maximum Blue Pruple: #BCB6FF */
+/* Antique Brass: #DC9E82  */
+/* Fuzzy Wuzzy: #C16E70  */
+
+/* Myrtle Green: #426B69 */
+/* Midnight: #74226C */
+
+/* Global Settings */
+body { 
+  background: url(https://images.unsplash.com/photo-1554372464-aae57950aa3a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.headingFont {
+  font-family: 'Libre Franklin', sans-serif;
+}
+
+.bodyFont {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Product Control */
+.addProductBtn {
+  background-color: #C16E70;
+}
+.addProductBtn:hover  {
+  background-color: red;
+  color: white;
+}
+
+/* Product */
+.productCard:hover  {
+  border: solid 5px #BCB6FF;
+  margin: -5px;
+}
+
+.sellBtn {
+ background-color: #E2EB98; 
+ color: grey;
+}
+
+.sellBtn:hover, .restockBtn:hover  {
+  background-color: yellow;
+}
+
+.restockBtn {
+  background-color: #BCB6FF;
+  color: grey;
+}
+
+.restockBtn:hover  {
+  background-color: #74226C;
+}
+
+/* Product Detail */
+.updateBtn {
+  background-color: #DC9E82;
+}
+
+.updateBtn:hover {
+  background-color: orange;
+  color: white;
+}
+
+.deleteBtn{
+  background-color: #C16E70;
+}
+
+.deleteBtn:hover {
+  background-color: red;
+  color: white;
+}
+
+/* Reusable Form */
+.formBtn {
+  background-color: #DC9E82;
+}
+
+.formBtn:hover {
+  background-color: orange;
 }
