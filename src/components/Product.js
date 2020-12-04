@@ -18,8 +18,8 @@ function Product(props) {
   let sellQuantity;
   let alert = <p style={{color:"#426B69", fontSize: 16}}>In Stock</p>;
 
-  if (props.quantity !== 0){
-    sellQuantity = props.quantity - 1;
+  if (parseInt(props.quantity) !== 0){
+    sellQuantity = parseInt(props.quantity) - 1;
     if (sellQuantity < 10){
       alert = <p style={{color:"#E2EB98 ", fontSize: 16}}>Almost Empty</p>;
     };
@@ -28,7 +28,7 @@ function Product(props) {
       brand: props.brand, 
       price: props.price, 
       flavor: props.flavor, 
-      quantity: sellQuantity, 
+      quantity: sellQuantity.toString(), 
       id: props.id
     })}>Sell</button>;
   } else {
@@ -38,7 +38,7 @@ function Product(props) {
       brand: props.brand, 
       price: props.price, 
       flavor: props.flavor, 
-      quantity: 124, 
+      quantity: "124", 
       id: props.id
     })}>Restock</button>;
   };

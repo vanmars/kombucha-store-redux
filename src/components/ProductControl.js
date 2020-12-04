@@ -13,14 +13,17 @@ class ProductControl extends Component {
     if (this.props.selectedProduct != null){
       const action = a.resetProduct();
       dispatch(action);
-      const action2 = a.toggleEditing();
-      dispatch(action2);
-      const action3 = a.toggleForm();
-      dispatch(action3);
+      // const action2 = a.toggleEditing();
+      // dispatch(action2);
+      // const action3 = a.toggleForm();
+      // dispatch(action3);
     } else {
+      console.log("handleClick else statement reached")
       const action = a.toggleForm();
+      console.log(action)
       dispatch(action)
     };
+    console.log("handleClick reached - Product:", this.props.selectedProduct, ", FormVisible:", this.props.formVisible, ", Editing:", this.props.editing);
   }
 
   handleCreatingProduct = (newProduct) => {
@@ -29,19 +32,24 @@ class ProductControl extends Component {
     dispatch(action);
     const action2 = a.toggleForm();
     dispatch(action2);
+    console.log("handleCreatingProduct reached - Product:", this.props.selectedProduct, ", FormVisible:", this.props.formVisible, ", Editing:", this.props.editing);
   }
 
   handleSelectingProduct = (id) => {
     const selectedProduct = this.props.masterProductList[id];
+    console.log(selectedProduct);
     const { dispatch } = this.props;
     const action = a.selectProduct(selectedProduct)
+    console.log(action);
     dispatch(action);
+    console.log("handleSelectingProduct reached - Product:", this.props.selectedProduct, ", FormVisible:", this.props.formVisible, ", Editing:", this.props.editing);
   }
 
   handleUpdateClick = () => {
     const { dispatch } = this.props;
     const action = a.toggleEditing();
     dispatch(action);
+    console.log("handleUpdateClick reached - Product:", this.props.selectedProduct, ", FormVisible:", this.props.formVisible, ", Editing:", this.props.editing);
   }
 
   handleUpdatingProduct = (productToUpdate) => {
@@ -52,6 +60,7 @@ class ProductControl extends Component {
     dispatch(action2);
     const action3 = a.toggleEditing();
     dispatch(action3);
+    console.log("handleUpdatingProduct reached - Product:", this.props.selectedProduct, ", FormVisible:", this.props.formVisible, ", Editing:", this.props.editing);
   }
 
   handleSellingProduct = (productToSell) => {
@@ -60,6 +69,7 @@ class ProductControl extends Component {
     dispatch(action);
     const action2 = a.resetProduct();
     dispatch(action2);
+    console.log("handleSellingProduct reached - Product:", this.props.selectedProduct, ", FormVisible:", this.props.formVisible, ", Editing:", this.props.editing);
   }
 
   handleRestockingProduct = (productToRestock) => {
@@ -68,6 +78,7 @@ class ProductControl extends Component {
     dispatch(action);
     const action2 = a.resetProduct();
     dispatch(action2);
+    console.log("handleRestockingProduct reached - Product:", this.props.selectedProduct, ", FormVisible:", this.props.formVisible, ", Editing:", this.props.editing);
   }
 
   handleDeletingProduct = (id) => {
@@ -76,6 +87,7 @@ class ProductControl extends Component {
     dispatch(action);
     const action2 = a.resetProduct();
     dispatch(action2);
+    console.log("handleDeletingProductreached - Product:", this.props.selectedProduct, ", FormVisible:", this.props.formVisible, ", Editing:", this.props.editing);
   }
 
   render() {
