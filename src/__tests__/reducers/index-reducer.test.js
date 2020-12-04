@@ -23,6 +23,11 @@ describe('rootReducer', () => {
     expect(store.getState().formVisible).toEqual(formVisibleReducer(undefined, {type: null}));
   });
 
+  test('Check that inital state of selectedProductReducer matches root reducer', () => {
+    expect(store.getState().selectedProduct).toEqual(selectedProductReducer(undefined, {type: null}));
+  });
+
+
   test('Check that add product works for productListReducer and root reducer', () => {
     const action = {
       type: 'ADD_PRODUCT',
