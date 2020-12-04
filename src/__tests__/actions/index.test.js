@@ -26,4 +26,11 @@ describe('product actions', () =>{
       id: 1
     });
   });
+
+  test('toggleForm should create toggle form action', () => {
+    expect(a.toggleForm(1)).toEqual({
+      type: 'TOGGLE_FORM'
+    });
+  });
+  
 })
