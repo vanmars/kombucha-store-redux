@@ -13,7 +13,9 @@ export default (state={}, action) => {
         }
       });
     case 'DELETE_PRODUCT':
-      return
+      const newState = { ...state };
+      delete newState[id];
+      return newState;
     default:
       return state;
   };
