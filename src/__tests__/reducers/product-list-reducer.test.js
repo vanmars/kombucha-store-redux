@@ -4,7 +4,7 @@ import productListReducer from  '../../reducers/product-list-reducer';
 
 describe ('productListReducer', () => {
   test('it should return the default state given a null action type', () => {
-    expect(productListReducer([], {type:null})).toEqual([]);
+    expect(productListReducer({}, {type:null})).toEqual({});
   });
 
   test('should successfully add new product to masterProductList', () => {
@@ -14,7 +14,7 @@ describe ('productListReducer', () => {
       price: 3.00, 
       flavor: "Grape", 
       quantity: 50, 
-      id: v4()
+      id: 1
     };
     const { name, brand, price, flavor, quantity, id} = productData;
     const action = {
@@ -22,18 +22,19 @@ describe ('productListReducer', () => {
       name: name,
       brand: brand,
       price: price,
-      flavor: findAllByPlaceholderText,
+      flavor: flavor,
       quantity: quantity,
       id: id
-    }
+    };
     expect(productListReducer({}, action)).toEqual({
-      name: "Gratuitous Grape", 
-      brand: "The Kombucha Bar", 
-      price: 3.00, 
-      flavor: "Grape", 
-      quantity: 50, 
-      id: v4()
-    })
-
+      [id]: {
+        name: "Gratuitous Grape", 
+        brand: "The Kombucha Bar", 
+        price: 3.00, 
+        flavor: "Grape", 
+        quantity: 50, 
+        id: 1
+      }
+    });
   });
 })
