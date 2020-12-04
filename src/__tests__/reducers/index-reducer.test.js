@@ -27,7 +27,6 @@ describe('rootReducer', () => {
     expect(store.getState().selectedProduct).toEqual(selectedProductReducer(undefined, {type: null}));
   });
 
-
   test('Check that add product works for productListReducer and root reducer', () => {
     const action = {
       type: 'ADD_PRODUCT',
@@ -48,6 +47,20 @@ describe('rootReducer', () => {
       };
     store.dispatch(action);
     expect(store.getState().formVisible).toEqual(formVisibleReducer(undefined, action));
+  });
+
+  test('Check that select product works for selectedProductReducer and root reducer', () => {
+    const action = {
+      type: 'SELECT_PRODUCT',
+      name: "Gratuitous Grape", 
+      brand: "The Kombucha Bar", 
+      price: 3.00, 
+      flavor: "Grape", 
+      quantity: 50, 
+      id: 1
+      };
+    store.dispatch(action);
+    expect(store.getState().selectedProduct).toEqual(selectedProductReducer(undefined, action));
   });
 
 })
