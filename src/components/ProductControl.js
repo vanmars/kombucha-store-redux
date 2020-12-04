@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 class ProductControl extends Component {
   constructor(props){
     super(props);
-    this.state = {
+    // this.state = {
       // masterProductList: [
       //   {name: "Gingerberry Goddess", brand: "Vanessa's Kombuchary", price: 3.25, flavor: "Gingerberry", quantity: 1, id: v4()},
       //   {name: "Mystic Mango", brand: "Booch Boulevard, LLC", price: 3.99, flavor: "Mango", quantity: 10, id: v4()},
@@ -18,8 +18,8 @@ class ProductControl extends Component {
       // ],
       // formVisible: false,
       // selectedProduct: null,
-      editing: false
-    };
+    //   editing: false
+    // };
   }
 
   //CUSTOM METHODS
@@ -30,12 +30,15 @@ class ProductControl extends Component {
       const action = {
         type: 'RESET_PRODUCT'
       };
-      dispatch(action);
-      this.setState({
+      const action2 = {
+        type: 'TOGGLE_EDITING'
+      };
+      dispatch(action2);
+      // this.setState({
         // formVisible: false,
         // selectedProduct: null,
-        editing: false
-      })
+        // editing: false
+      // })
     } else {
       const action = {
         type: 'TOGGLE_FORM'
@@ -91,7 +94,12 @@ class ProductControl extends Component {
 
   // Update Product
   handleUpdateClick = () => {
-    this.setState({editing: true});
+    const { dispatch } = this.props;
+    const action = {
+      type: 'TOGGLE_EDITING'
+    };
+    dispatch(action);
+    // this.setState({editing: true});
   }
 
   handleUpdatingProduct = (productToUpdate) => {
@@ -112,11 +120,16 @@ class ProductControl extends Component {
       type: 'RESET_PRODUCT'
     };
     dispatch(action2);
-    this.setState({
+    const action3 = {
+      type: 'TOGGLE_EDITING'
+    };
+    
+    dispatch(action3);
+    // this.setState({
       // masterProductList: updatedMasterProductList, 
-      editing: false, 
+      // editing: false, 
       // selectedProduct: null
-    });
+    // });
   }
 
   // Sell Product
@@ -194,7 +207,7 @@ class ProductControl extends Component {
 
     // CONDITIONAL RENDERING
     // Updating a Product
-    if (this.state.editing) {
+    if (this.props.editing) {
       currentlyVisibleState = 
         <UpdateProductForm
           product={this.props.selectedProduct}
@@ -247,14 +260,16 @@ const mapStateToProps = state => {
   return {
     masterProductList: state.masterProductList,
     formVisible: state.formVisible,
-    selectedProduct: state.selectedProduct
+    selectedProduct: state.selectedProduct,
+    editing: state.editing
   };
 }
 
 ProductControl.propTypes = {
   masterProductList: PropTypes.object,
   formVisible: PropTypes.bool,
-  selectedProduct: PropTypes.object
+  selectedProduct: PropTypes.object,
+  editing: PropTypes.bool
 }
 
 ProductControl = connect(mapStateToProps)(ProductControl);
