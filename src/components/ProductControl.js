@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { v4 } from 'uuid'; 
 import ProductList from './ProductList';
 import NewProductForm from './NewProductForm'
 import UpdateProductForm from './UpdateProductForm'
@@ -26,14 +25,18 @@ class ProductControl extends Component {
   //CUSTOM METHODS
   // Handle Reusable Button Clicks
   handleClick = () => {
-    if (this.state.selectedProduct != null){
+    const{ dispatch } = this.props;
+    if (this.props.selectedProduct != null){
+      const action = {
+        type: 'RESET_PRODUCT'
+      };
+      dispatch(action);
       this.setState({
         // formVisible: false,
         // selectedProduct: null,
         editing: false
       })
     } else {
-      const{ dispatch } = this.props;
       const action = {
         type: 'TOGGLE_FORM'
       };
@@ -105,6 +108,10 @@ class ProductControl extends Component {
     };
     dispatch(action);
     // const updatedMasterProductList = this.state.masterProductList.filter(product => product.id !== this.state.selectedProduct.id).concat(productToUpdate);
+    const action2 = {
+      type: 'RESET_PRODUCT'
+    };
+    dispatch(action2);
     this.setState({
       // masterProductList: updatedMasterProductList, 
       editing: false, 
@@ -127,10 +134,14 @@ class ProductControl extends Component {
     };
     dispatch(action);
     // const updatedMasterProductList = this.state.masterProductList.filter(product => product.id !== productToSell.id).concat(productToSell);
-    this.setState({
+    const action2 = {
+      type: 'RESET_PRODUCT'
+    };
+    dispatch(action2);
+    // this.setState({
       // masterProductList: updatedMasterProductList,
       // selectedProduct: null
-    })
+    // })
   }
 
   // Restock Product
@@ -148,10 +159,14 @@ class ProductControl extends Component {
     };
     dispatch(action);
     // const updatedMasterProductList = this.state.masterProductList.filter(product => product.id !== productToRestock.id).concat(productToRestock);
-    this.setState({
+    const action2 = {
+      type: 'RESET_PRODUCT'
+    };
+    dispatch(action2);
+    // this.setState({
       // masterProductList: updatedMasterProductList,
       // selectedProduct: null
-    })
+    // })
   }
 
   // Delete Individual Product
@@ -163,10 +178,14 @@ class ProductControl extends Component {
     };
     dispatch(action);
     // const newMasterProductList = this.state.masterProductList.filter(product => product.id !== id);
-    this.setState({
+    const action2 = {
+      type: 'RESET_PRODUCT'
+    };
+    dispatch(action2);
+    // this.setState({
       // masterProductList: newMasterProductList, 
       // selectedProduct: null
-    });
+    // });
   }
 
   render() {
