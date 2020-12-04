@@ -7,5 +7,5 @@ describe('editingReducer', () => {
 
   test('should toggle editing state to return true', () => {
     expect(editingReducer(false, {type:'TOGGLE_EDITING'})).toEqual(true)
-  })
+  });
 })

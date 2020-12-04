@@ -11,7 +11,8 @@ describe('rootReducer', () => {
     expect(rootReducer({}, {type:null})).toEqual({
     masterProductList: {},
     formVisible: false,
-    selectedProduct: null
+    selectedProduct: null,
+    editing: false
     });
   });
 
