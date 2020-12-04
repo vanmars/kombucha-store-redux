@@ -10,7 +10,7 @@ function ProductList(props) {
       <h1 className="headingFont" style={{color: "#BCB6FF"}}>Master Keg List</h1>
       <hr />
       <div className="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-3">
-        {products.sort((a, b) => a.name - b.name).map(product => 
+        {Object.values(products).map(product => 
           <div class="col mb-4">
             <div className= "card shadow-lg h-100 text-left" style={{backgroundColor: "#DC9E82" }}>
               <Product
@@ -34,7 +34,7 @@ function ProductList(props) {
 }
 
 ProductList.propTypes = {
-  products: PropTypes.arrayOf(PropTypes.object),
+  products: PropTypes.object,
   onProductSelection: PropTypes.func,
   onClickingSell: PropTypes.func,
   onClickingRestock: PropTypes.func
