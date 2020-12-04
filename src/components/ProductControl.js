@@ -4,7 +4,7 @@ import ProductList from './ProductList';
 import NewProductForm from './NewProductForm'
 import UpdateProductForm from './UpdateProductForm'
 import ProductDetail from './ProductDetail'
-import { connect } from 'react-redux';
+import { connect, createDispatchHook } from 'react-redux';
 import PropTypes from 'prop-types';
 
 class ProductControl extends Component {
@@ -17,7 +17,7 @@ class ProductControl extends Component {
       //   {name: "Symphonic Straberry", brand: "Scarlett's Secret SCOBY", price: 4.99, flavor: "Strawberry", quantity: 50, id: v4()},
       //   {name: "Regal Raspberry", brand: "Paradise Kombucha Co.", price: 2.99, flavor: "Raspberry", quantity: 124, id: v4()}
       // ],
-      formVisible: false,
+      // formVisible: false,
       selectedProduct: null,
       editing: false
     };
@@ -28,14 +28,19 @@ class ProductControl extends Component {
   handleClick = () => {
     if (this.state.selectedProduct != null){
       this.setState({
-        formVisible: false,
+        // formVisible: false,
         selectedProduct: null,
         editing: false
       })
     } else {
-      this.setState(prevState => ({
-        formVisible: !prevState.formVisible
-      }));
+      const{ dispatch } = this.props;
+      const action = {
+        type: 'TOGGLE_FORM'
+      };
+      dispatch(action)
+      // this.setState(prevState => ({
+      //   formVisible: !prevState.formVisible
+      // }));
     }
   }
 
@@ -53,10 +58,14 @@ class ProductControl extends Component {
       id: id
     };
     dispatch(action);
-    this.setState({
-      // masterProductList: newMasterProductList, 
-      formVisible: false
-    });
+    const action2 = {
+      type: 'TOGGLE_FORM'
+    };
+    dispatch(action2);
+    // this.setState({
+       // masterProductList: newMasterProductList, 
+       // formVisible: false
+    // });
   }
 
   // Read Individual Product Details
@@ -173,7 +182,7 @@ class ProductControl extends Component {
       buttonText = "Return to Product List";
 
     // New Product Form
-    } else if (this.state.formVisible){
+    } else if (this.props.formVisible){
       currentlyVisibleState = 
         <NewProductForm
           onNewProductCreation={this.handleCreatingProduct}
