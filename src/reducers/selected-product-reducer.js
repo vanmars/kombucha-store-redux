@@ -10,6 +10,8 @@ export default (state=null, action) => {
         quantity: quantity, 
         id: id
       }
+    case 'RESET_PRODUCT':
+      return;
     default:
       return state;
   };

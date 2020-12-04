@@ -18,7 +18,7 @@ class ProductControl extends Component {
       //   {name: "Regal Raspberry", brand: "Paradise Kombucha Co.", price: 2.99, flavor: "Raspberry", quantity: 124, id: v4()}
       // ],
       // formVisible: false,
-      selectedProduct: null,
+      // selectedProduct: null,
       editing: false
     };
   }
@@ -29,7 +29,7 @@ class ProductControl extends Component {
     if (this.state.selectedProduct != null){
       this.setState({
         // formVisible: false,
-        selectedProduct: null,
+        // selectedProduct: null,
         editing: false
       })
     } else {
@@ -71,7 +71,19 @@ class ProductControl extends Component {
   // Read Individual Product Details
   handleSelectingProduct = (id) => {
     const selectedProduct = this.props.masterProductList[id];
-    this.setState({selectedProduct: selectedProduct});
+    const { name, brand, price, flavor, quantity } = selectedProduct;
+    const { dispatch } = this.props;
+    const action = {
+      type: 'SELECT_PRODUCT',
+      name: name,
+      brand: brand,
+      price: price,
+      flavor: flavor,
+      quantity: quantity,
+      id: id
+    }
+    dispatch(action);
+    // this.setState({selectedProduct: selectedProduct});
   }
 
   // Update Product
@@ -96,7 +108,7 @@ class ProductControl extends Component {
     this.setState({
       // masterProductList: updatedMasterProductList, 
       editing: false, 
-      selectedProduct: null
+      // selectedProduct: null
     });
   }
 
@@ -117,7 +129,7 @@ class ProductControl extends Component {
     // const updatedMasterProductList = this.state.masterProductList.filter(product => product.id !== productToSell.id).concat(productToSell);
     this.setState({
       // masterProductList: updatedMasterProductList,
-      selectedProduct: null
+      // selectedProduct: null
     })
   }
 
@@ -138,7 +150,7 @@ class ProductControl extends Component {
     // const updatedMasterProductList = this.state.masterProductList.filter(product => product.id !== productToRestock.id).concat(productToRestock);
     this.setState({
       // masterProductList: updatedMasterProductList,
-      selectedProduct: null
+      // selectedProduct: null
     })
   }
 
@@ -153,7 +165,7 @@ class ProductControl extends Component {
     // const newMasterProductList = this.state.masterProductList.filter(product => product.id !== id);
     this.setState({
       // masterProductList: newMasterProductList, 
-      selectedProduct: null
+      // selectedProduct: null
     });
   }
 
@@ -166,16 +178,16 @@ class ProductControl extends Component {
     if (this.state.editing) {
       currentlyVisibleState = 
         <UpdateProductForm
-          product={this.state.selectedProduct}
+          product={this.props.selectedProduct}
           onProductUpdate={this.handleUpdatingProduct}
         />
       buttonText = "Return to Product List";
     
     // Product Detail
-    } else if (this.state.selectedProduct){
+    } else if (this.props.selectedProduct){
       currentlyVisibleState = 
         <ProductDetail
-          product={this.state.selectedProduct}
+          product={this.props.selectedProduct}
           onClickingDelete={this.handleDeletingProduct}
           onClickingUpdate={this.handleUpdateClick}
         />
@@ -215,13 +227,15 @@ class ProductControl extends Component {
 const mapStateToProps = state => {
   return {
     masterProductList: state.masterProductList,
-    formVisible: state.formVisible
+    formVisible: state.formVisible,
+    selectedProduct: state.selectedProduct
   };
 }
 
 ProductControl.propTypes = {
   masterProductList: PropTypes.object,
-  formVisible: PropTypes.bool
+  formVisible: PropTypes.bool,
+  selectedProduct: PropTypes.object
 }
 
 ProductControl = connect(mapStateToProps)(ProductControl);
