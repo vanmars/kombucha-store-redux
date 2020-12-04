@@ -38,6 +38,6 @@ ProductList.propTypes = {
   onProductSelection: PropTypes.func,
   onClickingSell: PropTypes.func,
   onClickingRestock: PropTypes.func
-}
+};
 
 export default ProductList;
