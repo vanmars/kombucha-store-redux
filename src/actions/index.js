@@ -24,9 +24,18 @@ export const toggleForm = () => ({
 })
 
 // SELECT_PRODUCT
-export const selectProduct = (product) => ({
-
-})
+export const selectProduct = (product) => {
+  const { name, brand, price, flavor, quantity, id} = product;
+  return {
+    type: 'SELECT_PRODUCT',
+    name: name, 
+    brand: brand, 
+    price: price, 
+    flavor: flavor, 
+    quantity: quantity, 
+    id: id
+  };
+}
 
 // RESET_PRODUCT
 export const resetProduct = () => ({
