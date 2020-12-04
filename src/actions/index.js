@@ -44,5 +44,5 @@ export const resetProduct = () => ({
 
 // TOGGLE_EDITING
 export const toggleEditing = () => ({
-
+  type: 'TOGGLE_EDITING'
 })
