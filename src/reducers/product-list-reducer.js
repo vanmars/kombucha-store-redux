@@ -1,5 +1,3 @@
-import { v4 } from 'uuid'
-
 export default (state={}, action) => {
   const { name, brand, price, flavor, quantity, id} = action;
   switch(action.type) {
@@ -13,7 +11,9 @@ export default (state={}, action) => {
           quantity: quantity,
           id: id
         }
-      })
+      });
+    case 'DELETE_PRODUCT':
+      return
     default:
       return state;
   };
