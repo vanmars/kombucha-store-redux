@@ -6,21 +6,16 @@ import ProductDetail from './ProductDetail'
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-class ProductControl extends Component {
-  constructor(props){
-    super(props);
-    // this.state = {
-      // masterProductList: [
+// masterProductList: [
       //   {name: "Gingerberry Goddess", brand: "Vanessa's Kombuchary", price: 3.25, flavor: "Gingerberry", quantity: 1, id: v4()},
       //   {name: "Mystic Mango", brand: "Booch Boulevard, LLC", price: 3.99, flavor: "Mango", quantity: 10, id: v4()},
       //   {name: "Symphonic Straberry", brand: "Scarlett's Secret SCOBY", price: 4.99, flavor: "Strawberry", quantity: 50, id: v4()},
       //   {name: "Regal Raspberry", brand: "Paradise Kombucha Co.", price: 2.99, flavor: "Raspberry", quantity: 124, id: v4()}
-      // ],
-      // formVisible: false,
-      // selectedProduct: null,
-    //   editing: false
-    // };
-  }
+// ]
+class ProductControl extends Component {
+  // constructor(props){
+  //   super(props);
+  // };
 
   //CUSTOM METHODS
   // Handle Reusable Button Clicks
@@ -30,15 +25,20 @@ class ProductControl extends Component {
       const action = {
         type: 'RESET_PRODUCT'
       };
+      dispatch(action);
       const action2 = {
         type: 'TOGGLE_EDITING'
       };
       dispatch(action2);
-      // this.setState({
-        // formVisible: false,
-        // selectedProduct: null,
-        // editing: false
-      // })
+      const action3 = {
+        type: 'TOGGLE_FORM'
+      };
+      dispatch(action3);
+    //   // this.setState({
+    //     // formVisible: false,
+    //     // selectedProduct: null,
+    //     // editing: false
+    //   // })
     } else {
       const action = {
         type: 'TOGGLE_FORM'
@@ -68,10 +68,6 @@ class ProductControl extends Component {
       type: 'TOGGLE_FORM'
     };
     dispatch(action2);
-    // this.setState({
-       // masterProductList: newMasterProductList, 
-       // formVisible: false
-    // });
   }
 
   // Read Individual Product Details
@@ -89,7 +85,6 @@ class ProductControl extends Component {
       id: id
     }
     dispatch(action);
-    // this.setState({selectedProduct: selectedProduct});
   }
 
   // Update Product
@@ -99,7 +94,6 @@ class ProductControl extends Component {
       type: 'TOGGLE_EDITING'
     };
     dispatch(action);
-    // this.setState({editing: true});
   }
 
   handleUpdatingProduct = (productToUpdate) => {
@@ -115,7 +109,6 @@ class ProductControl extends Component {
       id: id
     };
     dispatch(action);
-    // const updatedMasterProductList = this.state.masterProductList.filter(product => product.id !== this.state.selectedProduct.id).concat(productToUpdate);
     const action2 = {
       type: 'RESET_PRODUCT'
     };
@@ -123,8 +116,8 @@ class ProductControl extends Component {
     const action3 = {
       type: 'TOGGLE_EDITING'
     };
-    
     dispatch(action3);
+
     // this.setState({
       // masterProductList: updatedMasterProductList, 
       // editing: false, 
@@ -146,7 +139,6 @@ class ProductControl extends Component {
       id: id
     };
     dispatch(action);
-    // const updatedMasterProductList = this.state.masterProductList.filter(product => product.id !== productToSell.id).concat(productToSell);
     const action2 = {
       type: 'RESET_PRODUCT'
     };
@@ -171,7 +163,6 @@ class ProductControl extends Component {
       id: id
     };
     dispatch(action);
-    // const updatedMasterProductList = this.state.masterProductList.filter(product => product.id !== productToRestock.id).concat(productToRestock);
     const action2 = {
       type: 'RESET_PRODUCT'
     };
@@ -190,7 +181,6 @@ class ProductControl extends Component {
       id: id
     };
     dispatch(action);
-    // const newMasterProductList = this.state.masterProductList.filter(product => product.id !== id);
     const action2 = {
       type: 'RESET_PRODUCT'
     };
