@@ -7,7 +7,7 @@ function ReusableForm(props) {
       <form onSubmit={props.formSubmissionHandler} className="text-left">
         <div className="form-group">
           <label htmlFor="name">Name</label>
-          <input type="text" name="name" id="name" placeholder="Kombucha Drink" className="form-control w-75" required />
+          <input type="text" name="name" id="name" placeholder="Drink Name" className="form-control w-75" required />
         </div>
         <div className="form-group">
           <label htmlFor="brand">Brand</label>
