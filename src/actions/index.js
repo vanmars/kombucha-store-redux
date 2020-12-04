@@ -1,7 +1,16 @@
 // ADD_PRODUCT
-export const addProduct = (product) => ({
-
-})
+export const addProduct = (product) => {
+  const { name, brand, price, flavor, quantity, id} = product;
+  return {
+    type: 'ADD_PRODUCT',
+    name: name, 
+    brand: brand, 
+    price: price, 
+    flavor: flavor, 
+    quantity: quantity, 
+    id: id
+  };
+}
 
 // DELETE_PRODUCT
 export const deleteProduct = (id) => ({
