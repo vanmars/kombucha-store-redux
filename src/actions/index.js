@@ -43,6 +43,6 @@ export const resetProduct = () => ({
 })
 
 // TOGGLE_EDITING
-export const toggleEDITING = () => ({
+export const toggleEditing = () => ({
 
 })

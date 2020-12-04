@@ -28,7 +28,7 @@ describe('product actions', () =>{
   });
 
   test('toggleForm should create toggle form action', () => {
-    expect(a.toggleForm(1)).toEqual({
+    expect(a.toggleForm()).toEqual({
       type: 'TOGGLE_FORM'
     });
   });
@@ -53,8 +53,14 @@ describe('product actions', () =>{
   });
 
   test('resetProduct should create reset product action', () => {
-    expect(a.resetProduct(1)).toEqual({
+    expect(a.resetProduct()).toEqual({
       type: 'RESET_PRODUCT'
+    });
+  });
+
+  test('toggleEditing should create toggle editing action', () => {
+    expect(a.toggleEditing()).toEqual({
+      type: 'TOGGLE_EDITING'
     });
   });
 
