@@ -1,3 +1,8 @@
 export default (state=false, action) => {
-  return state;
+  switch(action.type) {
+    case 'TOGGLE_EDITING':
+      return;
+    default:
+      return state;
+  }
 }
