@@ -2,6 +2,7 @@ import rootReducer from '../../reducers/index';
 import { createStore } from 'redux';
 import productListReducer from '../../reducers/product-list-reducer';
 import formVisibleReducer from '../../reducers/form-visible-reducer';
+import selectedProductReducer from '../../reducers/selected-product-reducer';
 
 describe('rootReducer', () => {
   let store = createStore(rootReducer);
@@ -9,7 +10,8 @@ describe('rootReducer', () => {
   test('should return defaul state if no action type is recognized', () => {
     expect(rootReducer({}, {type:null})).toEqual({
     masterProductList: {},
-    formVisible: false
+    formVisible: false,
+    selectedProduct: null
     });
   });
 
