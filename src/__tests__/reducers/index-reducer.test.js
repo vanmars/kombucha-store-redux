@@ -35,4 +35,12 @@ describe('rootReducer', () => {
     expect(store.getState().masterProductList).toEqual(productListReducer(undefined, action));
   });
 
+  test('Check that toggle form works for formVisibleReducer and root reducer', () => {
+    const action = {
+      type: 'TOGGLE_FORM',
+      };
+    store.dispatch(action);
+    expect(store.getState().formVisible).toEqual(formVisibleReducer(undefined, action));
+  });
+
 })
