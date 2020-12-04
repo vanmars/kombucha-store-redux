@@ -32,5 +32,24 @@ describe('product actions', () =>{
       type: 'TOGGLE_FORM'
     });
   });
-  
+
+  test('selectProduct should create select product action', () => {
+    expect(a.selectProduct({
+      name: "Gratuitous Grape", 
+      brand: "The Kombucha Bar", 
+      price: 3.00, 
+      flavor: "Grape", 
+      quantity: 50, 
+      id: 1
+    })).toEqual({
+      type: 'SELECT_PRODUCT',
+      name: "Gratuitous Grape", 
+      brand: "The Kombucha Bar", 
+      price: 3.00, 
+      flavor: "Grape", 
+      quantity: 50, 
+      id: 1
+    });
+  });
+
 })
