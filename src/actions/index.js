@@ -20,7 +20,7 @@ export const deleteProduct = (id) => ({
 
 // TOGGLE_FORM
 export const toggleForm = () => ({
-
+  type: 'TOGGLE_FORM'
 })
 
 // SELECT_PRODUCT
