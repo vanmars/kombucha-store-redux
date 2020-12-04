@@ -19,4 +19,11 @@ describe('product actions', () =>{
       id: 1
     });
   });
+
+  test('deleteProduct should create delete product action', () => {
+    expect(a.deleteProduct(1)).toEqual({
+      type: 'DELETE_PRODUCT',
+      id: 1
+    });
+  });
 })
