@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Product from './Product';
 
 function ProductList(props) {
-  const{ products, onProductSelection, onClickingSell, onClickingRestock } = props;
+  const { products, onProductSelection, onClickingSell, onClickingRestock } = props;
 
   return (
     <React.Fragment>

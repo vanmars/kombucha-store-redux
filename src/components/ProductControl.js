@@ -13,17 +13,14 @@ class ProductControl extends Component {
     if (this.props.selectedProduct != null){
       const action = a.resetProduct();
       dispatch(action);
-      // const action2 = a.toggleEditing();
-      // dispatch(action2);
-      // const action3 = a.toggleForm();
-      // dispatch(action3);
+      if (this.props.editing === true) {
+        const action2 = a.toggleEditing();
+        dispatch(action2);
+      }
     } else {
-      console.log("handleClick else statement reached")
       const action = a.toggleForm();
-      console.log(action)
-      dispatch(action)
+      dispatch(action);
     };
-    console.log("handleClick reached - Product:", this.props.selectedProduct, ", FormVisible:", this.props.formVisible, ", Editing:", this.props.editing);
   }
 
   handleCreatingProduct = (newProduct) => {
@@ -32,24 +29,19 @@ class ProductControl extends Component {
     dispatch(action);
     const action2 = a.toggleForm();
     dispatch(action2);
-    console.log("handleCreatingProduct reached - Product:", this.props.selectedProduct, ", FormVisible:", this.props.formVisible, ", Editing:", this.props.editing);
   }
 
   handleSelectingProduct = (id) => {
-    const selectedProduct = this.props.masterProductList[id];
-    console.log(selectedProduct);
     const { dispatch } = this.props;
-    const action = a.selectProduct(selectedProduct)
-    console.log(action);
+    const selectedProduct = this.props.masterProductList[id];
+    const action = a.selectProduct(selectedProduct);
     dispatch(action);
-    console.log("handleSelectingProduct reached - Product:", this.props.selectedProduct, ", FormVisible:", this.props.formVisible, ", Editing:", this.props.editing);
   }
 
   handleUpdateClick = () => {
     const { dispatch } = this.props;
     const action = a.toggleEditing();
     dispatch(action);
-    console.log("handleUpdateClick reached - Product:", this.props.selectedProduct, ", FormVisible:", this.props.formVisible, ", Editing:", this.props.editing);
   }
 
   handleUpdatingProduct = (productToUpdate) => {
@@ -60,16 +52,14 @@ class ProductControl extends Component {
     dispatch(action2);
     const action3 = a.toggleEditing();
     dispatch(action3);
-    console.log("handleUpdatingProduct reached - Product:", this.props.selectedProduct, ", FormVisible:", this.props.formVisible, ", Editing:", this.props.editing);
   }
 
   handleSellingProduct = (productToSell) => {
     const { dispatch } = this.props;
-    const action  = a.addProduct(productToSell)
+    const action  = a.addProduct(productToSell);
     dispatch(action);
     const action2 = a.resetProduct();
     dispatch(action2);
-    console.log("handleSellingProduct reached - Product:", this.props.selectedProduct, ", FormVisible:", this.props.formVisible, ", Editing:", this.props.editing);
   }
 
   handleRestockingProduct = (productToRestock) => {
@@ -78,7 +68,6 @@ class ProductControl extends Component {
     dispatch(action);
     const action2 = a.resetProduct();
     dispatch(action2);
-    console.log("handleRestockingProduct reached - Product:", this.props.selectedProduct, ", FormVisible:", this.props.formVisible, ", Editing:", this.props.editing);
   }
 
   handleDeletingProduct = (id) => {
@@ -87,7 +76,6 @@ class ProductControl extends Component {
     dispatch(action);
     const action2 = a.resetProduct();
     dispatch(action2);
-    console.log("handleDeletingProductreached - Product:", this.props.selectedProduct, ", FormVisible:", this.props.formVisible, ", Editing:", this.props.editing);
   }
 
   render() {
@@ -96,6 +84,8 @@ class ProductControl extends Component {
 
     // Updating a Product
     if (this.props.editing) {
+      console.log("Update Product Reached")
+      console.log(this.props)
       currentlyVisibleState = 
         <UpdateProductForm
           product={this.props.selectedProduct}
@@ -105,6 +95,8 @@ class ProductControl extends Component {
     
     // Product Detail
     } else if (this.props.selectedProduct){
+      console.log("Product Detail Reached")
+      console.log(this.props)
       currentlyVisibleState = 
         <ProductDetail
           product={this.props.selectedProduct}
@@ -115,6 +107,8 @@ class ProductControl extends Component {
 
     // New Product Form
     } else if (this.props.formVisible){
+      console.log("New Product Form Reached")
+      console.log(this.props)
       currentlyVisibleState = 
         <NewProductForm
           onNewProductCreation={this.handleCreatingProduct}
@@ -123,6 +117,8 @@ class ProductControl extends Component {
 
     // Product List
     } else {
+      console.log("Product List Reached")
+      console.log(this.props)
       currentlyVisibleState = 
       <ProductList
         products={this.props.masterProductList}
