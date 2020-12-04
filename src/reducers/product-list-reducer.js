@@ -6,5 +6,10 @@ export default (state=[
   {name: "Symphonic Straberry", brand: "Scarlett's Secret SCOBY", price: 4.99, flavor: "Strawberry", quantity: 50, id: v4()},
   {name: "Regal Raspberry", brand: "Paradise Kombucha Co.", price: 2.99, flavor: "Raspberry", quantity: 124, id: v4()}
 ], action) => {
-  return state;
+  switch(action.type) {
+    case 'ADD_PRODUCT':
+      return
+    default:
+      return state;
+  };
 }
