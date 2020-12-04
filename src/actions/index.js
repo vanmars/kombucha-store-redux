@@ -39,7 +39,7 @@ export const selectProduct = (product) => {
 
 // RESET_PRODUCT
 export const resetProduct = () => ({
-
+  type: 'RESET_PRODUCT'
 })
 
 // TOGGLE_EDITING
