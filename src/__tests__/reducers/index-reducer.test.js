@@ -21,4 +21,18 @@ describe('rootReducer', () => {
     expect(store.getState().formVisible).toEqual(formVisibleReducer(undefined, {type: null}));
   });
 
+  test('Check that add product works for productListReducer and root reducer', () => {
+    const action = {
+      type: 'ADD_PRODUCT',
+      name: "Gratuitous Grape", 
+      brand: "The Kombucha Bar", 
+      price: 3.00, 
+      flavor: "Grape", 
+      quantity: 50, 
+      id: 1
+      };
+    store.dispatch(action);
+    expect(store.getState().masterProductList).toEqual(productListReducer(undefined, action));
+  });
+
 })
