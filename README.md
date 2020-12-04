@@ -1,4 +1,4 @@
-# _Kombucha Store_
+# _Kombucha Store with Redux_
 
 _20 November 2020_
 
@@ -8,7 +8,7 @@ _20 November 2020_
 
 ## Description
 
-_This is an exercise for Epidocodus to practice making a React website with full CRUD functionality. The instructions were to build a tap room in React where a bar or kombucha store can track their kegs._
+_This is a continuation of an exercise for Epidocodus to practice making a React website with full CRUD functionality. The original instructions were to build a tap room in React where a bar or kombucha store can track their kegs. This project refactors the original project by moving all local and shared state to the redux store._
 
 ## User Stories
 | #    | Story |
@@ -31,16 +31,14 @@ _This is an exercise for Epidocodus to practice making a React website with full
 
 ## Setup/Installation Requirements
 * Navigate to the directory in which you would like to clone this project.
-* Run `git clone https://github.com/vanmars/kombucha-store.git` in terminal.
-* Run `cd kombucha-store` to navigate into new project directory.
+* Run `git clone https://github.com/vanmars/kombucha-store-redux.git` in terminal.
+* Run `cd kombucha-store-redux` to navigate into new project directory.
 * Open the cloned repo in a text editor of your choice.
 * Run `npm install` to download all dependencies.
 * Run `npm start` to start a live server and view projec in the browser.
 
 ## Known Bugs
 _There are no known bugs at this time. But the following item could be improved:_
-
-* Sort product list by name, for readability and for consistency after a change is made to an item on the list.
 
 ## Support and Contact Details
 _Connect with me at vamariestewart@gmail.com with ideas to improve this project._
