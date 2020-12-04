@@ -1,4 +1,5 @@
 import formVisibleReducer from '../../reducers/form-visible-reducer';
+import * as c from '../../actions/ActionTypes';
 
 describe('formVisibleReducer', () => {
   test('should return default state with null action type', () => {
@@ -6,6 +7,6 @@ describe('formVisibleReducer', () => {
   });
 
   test('should toggle form visibility state to true', () => {
-    expect(formVisibleReducer(false, {type:'TOGGLE_FORM'})).toEqual(true)
+    expect(formVisibleReducer(false, {type:c.TOGGLE_FORM})).toEqual(true)
   })
 })

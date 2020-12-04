@@ -1,7 +1,9 @@
+import * as c from '../actions/ActionTypes';
+
 export default (state=null, action) => {
   const { type, name, brand, price, flavor, quantity, id} = action
   switch(type) {
-    case 'SELECT_PRODUCT':
+    case c.SELECT_PRODUCT:
       return {
         name: name, 
         brand: brand, 
@@ -10,7 +12,7 @@ export default (state=null, action) => {
         quantity: quantity, 
         id: id
       }
-    case 'RESET_PRODUCT':
+    case c.RESET_PRODUCT:
       return null;
     default:
       return state;

@@ -1,4 +1,5 @@
 import selectedProductReducer from '../../reducers/selected-product-reducer';
+import * as c from '../../actions/ActionTypes';
 
 describe('selectedProductReducer', () => {
   const masterProductList = {
@@ -20,7 +21,6 @@ describe('selectedProductReducer', () => {
   };
 
   let action;
-  
 
   test('should return default state given null action type', () => {
     expect(selectedProductReducer(undefined, {type: null})).toEqual(null);
@@ -28,7 +28,7 @@ describe('selectedProductReducer', () => {
 
   test('should successfully store selectedProduct', () => {
     action = {
-      type: 'SELECT_PRODUCT',
+      type: c.SELECT_PRODUCT,
       name: "Gingerberry Goddess", 
       brand: "Vanessa's Kombuchary", 
       price: 3.25, flavor: "Gingerberry", 
@@ -47,7 +47,7 @@ describe('selectedProductReducer', () => {
 
   test('should successfully reset selectedProduct', () => {
     action = {
-      type: 'RESET_PRODUCT'
+      type: c.RESET_PRODUCT
     }
     expect(selectedProductReducer(masterProductList[1], action)).toEqual(null);
   });

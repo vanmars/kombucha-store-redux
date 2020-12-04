@@ -1,4 +1,5 @@
 import productListReducer from  '../../reducers/product-list-reducer';
+import * as c from '../../actions/ActionTypes';
 
 describe ('productListReducer', () => {
   test('it should return the default state given a null action type', () => {
@@ -16,7 +17,7 @@ describe ('productListReducer', () => {
     };
     const { name, brand, price, flavor, quantity, id} = productData;
     const action = {
-      type: 'ADD_PRODUCT',
+      type: c.ADD_PRODUCT,
       name: name,
       brand: brand,
       price: price,
@@ -51,7 +52,7 @@ describe ('productListReducer', () => {
       id: 2},
     };
     const action = {
-      type: 'DELETE_PRODUCT',
+      type: c.DELETE_PRODUCT,
       name: "Gingerberry Goddess", 
       brand: "Vanessa's Kombuchary", 
       price: 3.25, flavor: "Gingerberry", 

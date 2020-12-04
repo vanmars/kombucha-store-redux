@@ -1,8 +1,10 @@
+import * as c from './ActionTypes';
+
 // ADD_PRODUCT
 export const addProduct = (product) => {
   const { name, brand, price, flavor, quantity, id} = product;
   return {
-    type: 'ADD_PRODUCT',
+    type: c.ADD_PRODUCT,
     name: name, 
     brand: brand, 
     price: price, 
@@ -14,20 +16,20 @@ export const addProduct = (product) => {
 
 // DELETE_PRODUCT
 export const deleteProduct = (id) => ({
-  type: 'DELETE_PRODUCT',
+  type: c.DELETE_PRODUCT,
   id: id
 })
 
 // TOGGLE_FORM
 export const toggleForm = () => ({
-  type: 'TOGGLE_FORM'
+  type: c.TOGGLE_FORM
 })
 
 // SELECT_PRODUCT
 export const selectProduct = (product) => {
   const { name, brand, price, flavor, quantity, id} = product;
   return {
-    type: 'SELECT_PRODUCT',
+    type: c.SELECT_PRODUCT,
     name: name, 
     brand: brand, 
     price: price, 
@@ -39,10 +41,10 @@ export const selectProduct = (product) => {
 
 // RESET_PRODUCT
 export const resetProduct = () => ({
-  type: 'RESET_PRODUCT'
+  type: c.RESET_PRODUCT
 })
 
 // TOGGLE_EDITING
 export const toggleEditing = () => ({
-  type: 'TOGGLE_EDITING'
+  type: c.TOGGLE_EDITING
 })

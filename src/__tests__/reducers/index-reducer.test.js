@@ -4,6 +4,7 @@ import productListReducer from '../../reducers/product-list-reducer';
 import formVisibleReducer from '../../reducers/form-visible-reducer';
 import selectedProductReducer from '../../reducers/selected-product-reducer';
 import editingReducer from '../../reducers/editing-reducer';
+import * as c from '../../actions/ActionTypes';
 
 describe('rootReducer', () => {
   let store = createStore(rootReducer);
@@ -35,7 +36,7 @@ describe('rootReducer', () => {
 
   test('Check that add product works for productListReducer and root reducer', () => {
     const action = {
-      type: 'ADD_PRODUCT',
+      type: c.ADD_PRODUCT,
       name: "Gratuitous Grape", 
       brand: "The Kombucha Bar", 
       price: 3.00, 
@@ -49,7 +50,7 @@ describe('rootReducer', () => {
 
   test('Check that toggle form works for formVisibleReducer and root reducer', () => {
     const action = {
-      type: 'TOGGLE_FORM',
+      type: c.TOGGLE_FORM
       };
     store.dispatch(action);
     expect(store.getState().formVisible).toEqual(formVisibleReducer(undefined, action));
@@ -57,7 +58,7 @@ describe('rootReducer', () => {
 
   test('Check that select product works for selectedProductReducer and root reducer', () => {
     const action = {
-      type: 'SELECT_PRODUCT',
+      type: c.SELECT_PRODUCT,
       name: "Gratuitous Grape", 
       brand: "The Kombucha Bar", 
       price: 3.00, 
@@ -71,7 +72,7 @@ describe('rootReducer', () => {
 
   test('Check that toggle works for editingReducer and root reducer', () => {
     const action = {
-      type: 'TOGGLE_EDITING',
+      type: c.TOGGLE_EDITING,
       };
     store.dispatch(action);
     expect(store.getState().editing).toEqual(editingReducer(undefined, action));

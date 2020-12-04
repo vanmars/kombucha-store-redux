@@ -1,4 +1,5 @@
-import * as a from '../../actions';
+import * as a from '../../actions/index';
+import * as c from '../../actions/ActionTypes';
 
 describe('product actions', () =>{
   test('addProduct should create add product action', () => {
@@ -10,7 +11,7 @@ describe('product actions', () =>{
       quantity: 50, 
       id: 1
     })).toEqual({
-      type: 'ADD_PRODUCT',
+      type: c.ADD_PRODUCT,
       name: "Gratuitous Grape", 
       brand: "The Kombucha Bar", 
       price: 3.00, 
@@ -22,14 +23,14 @@ describe('product actions', () =>{
 
   test('deleteProduct should create delete product action', () => {
     expect(a.deleteProduct(1)).toEqual({
-      type: 'DELETE_PRODUCT',
+      type: c.DELETE_PRODUCT,
       id: 1
     });
   });
 
   test('toggleForm should create toggle form action', () => {
     expect(a.toggleForm()).toEqual({
-      type: 'TOGGLE_FORM'
+      type: c.TOGGLE_FORM
     });
   });
 
@@ -42,7 +43,7 @@ describe('product actions', () =>{
       quantity: 50, 
       id: 1
     })).toEqual({
-      type: 'SELECT_PRODUCT',
+      type: c.SELECT_PRODUCT,
       name: "Gratuitous Grape", 
       brand: "The Kombucha Bar", 
       price: 3.00, 
@@ -54,13 +55,13 @@ describe('product actions', () =>{
 
   test('resetProduct should create reset product action', () => {
     expect(a.resetProduct()).toEqual({
-      type: 'RESET_PRODUCT'
+      type: c.RESET_PRODUCT
     });
   });
 
   test('toggleEditing should create toggle editing action', () => {
     expect(a.toggleEditing()).toEqual({
-      type: 'TOGGLE_EDITING'
+      type: c.TOGGLE_EDITING
     });
   });
 
