@@ -84,8 +84,6 @@ class ProductControl extends Component {
 
     // Updating a Product
     if (this.props.editing) {
-      console.log("Update Product Reached")
-      console.log(this.props)
       currentlyVisibleState = 
         <UpdateProductForm
           product={this.props.selectedProduct}
@@ -95,8 +93,6 @@ class ProductControl extends Component {
     
     // Product Detail
     } else if (this.props.selectedProduct){
-      console.log("Product Detail Reached")
-      console.log(this.props)
       currentlyVisibleState = 
         <ProductDetail
           product={this.props.selectedProduct}
@@ -107,8 +103,6 @@ class ProductControl extends Component {
 
     // New Product Form
     } else if (this.props.formVisible){
-      console.log("New Product Form Reached")
-      console.log(this.props)
       currentlyVisibleState = 
         <NewProductForm
           onNewProductCreation={this.handleCreatingProduct}
@@ -117,8 +111,6 @@ class ProductControl extends Component {
 
     // Product List
     } else {
-      console.log("Product List Reached")
-      console.log(this.props)
       currentlyVisibleState = 
       <ProductList
         products={this.props.masterProductList}
