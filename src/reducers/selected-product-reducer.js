@@ -11,7 +11,7 @@ export default (state=null, action) => {
         id: id
       }
     case 'RESET_PRODUCT':
-      return;
+      return null;
     default:
       return state;
   };
