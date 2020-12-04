@@ -3,11 +3,12 @@ import { createStore } from 'redux';
 import productListReducer from '../../reducers/product-list-reducer';
 import formVisibleReducer from '../../reducers/form-visible-reducer';
 import selectedProductReducer from '../../reducers/selected-product-reducer';
+import editingReducer from '../../reducers/editing-reducer';
 
 describe('rootReducer', () => {
   let store = createStore(rootReducer);
 
-  test('should return defaul state if no action type is recognized', () => {
+  test('should return default state if no action type is recognized', () => {
     expect(rootReducer({}, {type:null})).toEqual({
     masterProductList: {},
     formVisible: false,
@@ -26,6 +27,10 @@ describe('rootReducer', () => {
 
   test('Check that inital state of selectedProductReducer matches root reducer', () => {
     expect(store.getState().selectedProduct).toEqual(selectedProductReducer(undefined, {type: null}));
+  });
+
+  test('Check that inital state of editingReducer matches root reducer', () => {
+    expect(store.getState().editing).toEqual(editingReducer(undefined, {type: null}));
   });
 
   test('Check that add product works for productListReducer and root reducer', () => {
