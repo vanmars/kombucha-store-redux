@@ -52,4 +52,10 @@ describe('product actions', () =>{
     });
   });
 
+  test('resetProduct should create reset product action', () => {
+    expect(a.resetProduct(1)).toEqual({
+      type: 'RESET_PRODUCT'
+    });
+  });
+
 })
