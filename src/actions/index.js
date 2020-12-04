@@ -14,7 +14,8 @@ export const addProduct = (product) => {
 
 // DELETE_PRODUCT
 export const deleteProduct = (id) => ({
-
+  type: 'DELETE_PRODUCT',
+  id: id
 })
 
 // TOGGLE_FORM
