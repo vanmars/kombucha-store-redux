@@ -1,3 +1,3 @@
 export default (state=null, action) => {
-  return
+  return state;
 }
