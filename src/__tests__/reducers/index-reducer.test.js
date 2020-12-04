@@ -69,4 +69,12 @@ describe('rootReducer', () => {
     expect(store.getState().selectedProduct).toEqual(selectedProductReducer(undefined, action));
   });
 
+  test('Check that toggle works for editingReducer and root reducer', () => {
+    const action = {
+      type: 'TOGGLE_EDITING',
+      };
+    store.dispatch(action);
+    expect(store.getState().editing).toEqual(editingReducer(undefined, action));
+  });
+
 })
