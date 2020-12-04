@@ -205,12 +205,14 @@ class ProductControl extends Component {
 
 const mapStateToProps = state => {
   return {
-    masterProductList: state
+    masterProductList: state.masterProductList,
+    formVisible: state.formVisible
   };
 }
 
 ProductControl.propTypes = {
-  masterProductList: PropTypes.object
+  masterProductList: PropTypes.object,
+  formVisible: PropTypes.bool
 }
 
 ProductControl = connect(mapStateToProps)(ProductControl);
