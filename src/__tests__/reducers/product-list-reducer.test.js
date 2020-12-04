@@ -52,6 +52,10 @@ describe ('productListReducer', () => {
     };
     const action = {
       type: 'DELETE_PRODUCT',
+      name: "Gingerberry Goddess", 
+      brand: "Vanessa's Kombuchary", 
+      price: 3.25, flavor: "Gingerberry", 
+      quantity: 1, 
       id: 1
     };
     expect(productListReducer(currentState, action)).toEqual({

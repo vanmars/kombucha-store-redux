@@ -4,7 +4,7 @@ import ProductList from './ProductList';
 import NewProductForm from './NewProductForm'
 import UpdateProductForm from './UpdateProductForm'
 import ProductDetail from './ProductDetail'
-import { connect, createDispatchHook } from 'react-redux';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 class ProductControl extends Component {

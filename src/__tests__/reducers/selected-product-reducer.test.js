@@ -21,8 +21,12 @@ describe('selectedProductReducer', () => {
 
   const action = {
     type: 'SELECT_PRODUCT',
+    name: "Gingerberry Goddess", 
+    brand: "Vanessa's Kombuchary", 
+    price: 3.25, flavor: "Gingerberry", 
+    quantity: 1, 
     id: 1
-  }
+  };
 
   test('should return default state given null action type', () => {
     expect(selectedProductReducer(undefined, {type: null})).toEqual(null);
@@ -30,13 +34,11 @@ describe('selectedProductReducer', () => {
 
   test('should successfully store selectedProduct', () => {
     expect(selectedProductReducer({masterProductList: masterProductList}, action)).toEqual({
-      1: {
-        name: "Gingerberry Goddess", 
-        brand: "Vanessa's Kombuchary", 
-        price: 3.25, flavor: "Gingerberry", 
-        quantity: 1, 
-        id: 1
-      }
+      name: "Gingerberry Goddess", 
+      brand: "Vanessa's Kombuchary", 
+      price: 3.25, flavor: "Gingerberry", 
+      quantity: 1, 
+      id: 1
     });
   });
 })
