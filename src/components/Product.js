@@ -68,9 +68,9 @@ function Product(props) {
 Product.propTypes = {
   name: PropTypes.string,
   brand: PropTypes.string,
-  price: PropTypes.number,
+  price: PropTypes.string,
   flavor: PropTypes.string,
-  quantity: PropTypes.number,
+  quantity: PropTypes.string,
   key: PropTypes.string,
   id: PropTypes.string,
   whenProductClicked: PropTypes.func,
