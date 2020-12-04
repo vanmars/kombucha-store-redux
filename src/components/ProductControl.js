@@ -4,6 +4,7 @@ import ProductList from './ProductList';
 import NewProductForm from './NewProductForm'
 import UpdateProductForm from './UpdateProductForm'
 import ProductDetail from './ProductDetail'
+import { connect } from 'react-redux';
 
 class ProductControl extends React.Component {
   constructor(props){
@@ -147,5 +148,7 @@ class ProductControl extends React.Component {
     );
   }
 }
+
+ProductControl = connect()(ProductControl);
 
 export default ProductControl;
