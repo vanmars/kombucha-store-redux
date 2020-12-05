@@ -84,6 +84,7 @@ class ProductControl extends Component {
 
     // Updating a Product
     if (this.props.editing) {
+      console.log(this.props)
       currentlyVisibleState = 
         <UpdateProductForm
           product={this.props.selectedProduct}

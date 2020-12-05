@@ -24,6 +24,7 @@ function UpdateProductForm(props) {
         <ReusableForm 
           buttonText="Update!"
           formSubmissionHandler={handleUpdateProductFormSubmission}
+          product={product}
         />
       </div>
     </React.Fragment>
