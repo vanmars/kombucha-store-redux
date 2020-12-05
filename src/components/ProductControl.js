@@ -16,7 +16,7 @@ class ProductControl extends Component {
       if (this.props.editing === true) {
         const action2 = a.toggleEditing();
         dispatch(action2);
-      }
+      };
     } else {
       const action = a.toggleForm();
       dispatch(action);
@@ -84,7 +84,6 @@ class ProductControl extends Component {
 
     // Updating a Product
     if (this.props.editing) {
-      console.log(this.props)
       currentlyVisibleState = 
         <UpdateProductForm
           product={this.props.selectedProduct}

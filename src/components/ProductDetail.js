@@ -26,7 +26,7 @@ function ProductDetail(props) {
 ProductDetail.propTypes = {
   product: PropTypes.object,
   onClickingDelete: PropTypes.func,
-  onClickingUpdate: PropTypes.func,
+  onClickingUpdate: PropTypes.func
 }
 
 export default ProductDetail;
