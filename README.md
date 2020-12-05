@@ -1,4 +1,4 @@
-# _Kombucha Store with Redux_
+# :tropical_drink: _Kombucha Store with Redux_
 
 _4 December 2020_
 
@@ -6,14 +6,14 @@ _4 December 2020_
 
 #### By _**Vanessa Stewart**_
 
-## Description
+## :mag_right: Description
 
 _This is a continuation of an exercise for Epidocodus to practice making a React website with full CRUD functionality. The original instructions were to build a tap room in React where a bar or kombucha store can track their kegs. This project refactors the original project by moving all local and shared state to the redux store._
 
 <img src="./public/splash.png">
 
 
-## User Stories
+## :books: User Stories
 | #    | Story |
 | ---- | ----- |
 | 1 | As a user, I want to see a list/menu of all available kegs. For each keg, I want to see its name, brand, price and flavor. |
@@ -29,10 +29,10 @@ _This is a continuation of an exercise for Epidocodus to practice making a React
 | 10 | As a user, I want alert messages (in stock, out of stock, almost empty) color-coded for easy readability. |  
 | 11 | As a user, I want this application to be nicely styled. (Use stylesheets and CSS objects!)|  
 
-## Website Planning
+## :clipboard: Website Planning
 <img src="./public/kombucha-planning.png">
 
-## Setup/Installation Requirements
+## :wrench: Setup/Installation Requirements
 * Navigate to the directory in which you would like to clone this project.
 * Run `git clone https://github.com/vanmars/kombucha-store-redux.git` in terminal.
 * Run `cd kombucha-store-redux` to navigate into new project directory.
@@ -40,20 +40,20 @@ _This is a continuation of an exercise for Epidocodus to practice making a React
 * Run `npm install` to download all dependencies.
 * Run `npm start` to start a live server and view projec in the browser.
 
-## Known Bugs
+## :beetle: Known Bugs
 _There are no known bugs at this time. But the following item could be improved:_
 
-## Support and Contact Details
+## :mailbox_with_no_mail: Support and Contact Details
 _Connect with me at vamariestewart@gmail.com with ideas to improve this project._
 
-## Technologies Used
+## :computer: Technologies Used
 * HTML
 * CSS/Bootstrap
 * JavaScript/JSX/React/Redux
 * Webpack
 * NPM
 
-## Photo Credits
+## :camera: Photo Credits
 Background Image <span>Photo by <a href="https://unsplash.com/@curryandlove?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Klara Avsenik</a> on <a href="https://unsplash.com/s/photos/kombucha?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
 ### License
 
