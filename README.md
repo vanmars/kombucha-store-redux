@@ -10,7 +10,7 @@ _4 December 2020_
 
 _This is a continuation of an exercise for Epidocodus to practice making a React website with full CRUD functionality. The original instructions were to build a tap room in React where a bar or kombucha store can track their kegs. This project refactors the original project by moving all local and shared state to the redux store._
 
-<img src="./public/splash.png>
+<img src="./public/splash.png">
 
 
 ## User Stories
