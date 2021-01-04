@@ -3,6 +3,7 @@
 _4 December 2020_
 
 #### _Website for a fake kombucha store_
+[Deployment Link](https://happy-fizzles.vercel.app/)
 
 #### By _**Vanessa Stewart**_
 

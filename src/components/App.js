@@ -8,11 +8,11 @@ function App() {
       <div className="text-center" style={{backgroundColor: "#C16E70" }}>
         <Header />
       </div>
-    <div className="container mb-5">
-      <div className="text-center">
-        <ProductControl />
+      <div className="container mb-5">
+        <div className="text-center">
+          <ProductControl />
+        </div>
       </div>
-    </div>
     </React.Fragment>
   );
 }
